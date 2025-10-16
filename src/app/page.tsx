@@ -1,11 +1,27 @@
 'use client';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useEffect } from 'react'; 
+import { sdk } from '@farcaster/miniapp-sdk'; 
+
 import Footer from 'src/components/Footer';
 import TransactionWrapper from 'src/components/TransactionWrapper';
 import { useAccount } from 'wagmi';
 
 export default function Page() {
   const { address, isConnected } = useAccount();
+
+  // Memastikan Mini App muncul dengan menghilangkan layar loading/splash screen
+  useEffect(() => {
+    const notifyReady = async () => {
+      try {
+        await sdk.actions.ready(); 
+      } catch (error) {
+        console.error("Gagal memberi sinyal ready:", error);
+      }
+    };
+
+    notifyReady();
+  }, []); 
 
   return (
     // Set background to dark
@@ -41,7 +57,7 @@ export default function Page() {
                 Claim Free 0.05 Base Sepolia ETH
             </p>
             
-            {/* INSTRUCTIONS */}
+            {/* INSTRUCTIONS telah dihilangkan, menyisakan pesan dasar */}
             <p className="text-base text-gray-200 mb-2">
                 You can claim every 24 hours.
             </p>
@@ -53,11 +69,10 @@ export default function Page() {
         )}
       </section>
 
-      {/* FIXED CREDIT TEXT: Mengganti handle Warpcast */}
+      {/* FIXED CREDIT TEXT */}
       <div className="mt-4 w-full max-w-sm text-center">
         <p className="text-xs text-yellow-500">
             Powered by <a 
-                // URL dan teks Warpcast diganti menjadi aradeaward
                 href="https://warpcast.com/aradeaward" 
                 target="_blank" 
                 rel="noopener noreferrer"
