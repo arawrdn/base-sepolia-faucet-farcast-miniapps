@@ -1,17 +1,17 @@
 export const BASE_SEPOLIA_CHAIN_ID = 84532;
-export const mintContractAddress = '0xA3e40bBe8E8579Cd2619Ef9C6fEA362b760dac9f';
-export const mintABI = [
+export const FAUCET_CONTRACT_ADDRESS = '0x804972f3BF4c27Cd2D080029A84408d425E9B9DA';
+export const FAUCET_ABI = [
   {
     inputs: [
       {
         internalType: 'address',
-        name: 'to',
+        name: 'receipent',
         type: 'address',
       },
     ],
-    name: 'mint',
+    name: 'claim',
     outputs: [],
-    stateMutability: 'public',
+    stateMutability: 'nonpayable',
     type: 'function',
   },
 ] as const;
