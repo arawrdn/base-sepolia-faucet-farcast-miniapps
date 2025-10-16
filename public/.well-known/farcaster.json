@@ -1,0 +1,8 @@
+{
+  "name": "Base Sepolia Faucet",
+  "icon": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/faucet-icon.png",
+  "manifestVersion": "v1",
+  "miniapp": {
+    "url": "https://base-sepolia-faucet-farcast-miniapp.vercel.app"
+  }
+}
