@@ -13,7 +13,6 @@ export default function Page() {
       
       {/* 1. Faucet Header & Connect Button */}
       <section className="mt-4 mb-6 flex w-full max-w-sm flex-row items-center justify-between">
-        {/* Header text in yellow */}
         <h1 className="text-xl font-extrabold text-yellow-400">Base Sepolia Faucet</h1>
         <ConnectButton /> 
       </section>
@@ -54,7 +53,22 @@ export default function Page() {
         )}
       </section>
 
-      {/* 3. Footer (Assumes Footer component is styled appropriately for dark mode) */}
+      {/* FIXED CREDIT TEXT: Mengganti handle Warpcast */}
+      <div className="mt-4 w-full max-w-sm text-center">
+        <p className="text-xs text-yellow-500">
+            Powered by <a 
+                // URL dan teks Warpcast diganti menjadi aradeaward
+                href="https://warpcast.com/aradeaward" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:underline"
+            >
+                @aradeaward
+            </a>
+        </p>
+      </div>
+
+      {/* 3. Footer */}
       <Footer />
     </div>
   );
