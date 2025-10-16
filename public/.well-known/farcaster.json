@@ -1,8 +1,18 @@
 {
-  "name": "Base Sepolia Faucet",
-  "icon": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/faucet-icon.png",
-  "manifestVersion": "v1",
-  "miniapp": {
-    "url": "https://base-sepolia-faucet-farcast-miniapp.vercel.app"
+  "accountAssociation": {
+    "header": "eyJmaWQiOjQ0MDcyMywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDJBNmI1MjA0QjgzQzc2MTljOTBjNEVCNmI1MzY1QUEwYjdkOTEyRjcifQ",
+    "payload": "eyJkb21haW4iOiJiYXNlLXNlcG9saWEtZmF1Y2V0LWZhcmNhc3QtbWluaWFwcC52ZXJjZWwuYXBwIn0",
+    "signature": "IqLvKIML9r8ERAlnTH6j2r9lfU4/+GkowGJSijnXNtw0sxdqwRcHom164tO4y8AsZiL0LraZ/pE65BCweyf6Ihs="
+  },
+  "frame": {
+    "version": "1",
+    "name": "Base Sepolia Faucet",
+    "iconUrl": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/faucet-icon.png",
+    "homeUrl": "https://base-sepolia-faucet-farcast-miniapp.vercel.app",
+    "imageUrl": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/faucet-icon.png",
+    "buttonTitle": "Claim 0.05 ETH",
+    "splashImageUrl": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/faucet-icon.png",
+    "splashBackgroundColor": "#000000",
+    "webhookUrl": "https://base-sepolia-faucet-farcast-miniapp.vercel.app/api/webhook"
   }
 }
