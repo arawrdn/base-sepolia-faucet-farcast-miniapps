@@ -24,7 +24,7 @@
     "react-dom": "^18",
     "siwe": "^2.3.2",
     "@farcaster/miniapp-sdk": "^0.1.0",
-    "wagmi": "^2.11.0", 
+    "wagmi": "^2.5.0", 
     "@rainbow-me/rainbowkit": "^2.0.1"
   },
   "devDependencies": {
