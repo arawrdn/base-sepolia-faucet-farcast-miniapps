@@ -13,19 +13,21 @@ import type {
 import type { Address, ContractFunctionParameters } from 'viem';
 import {
   BASE_SEPOLIA_CHAIN_ID,
-  mintABI,
-  mintContractAddress,
+  FAUCET_ABI,
+  FAUCET_CONTRACT_ADDRESS,
 } from '../constants';
 
 export default function TransactionWrapper({ address }: { address: Address }) {
+  // --- MULAI PERUBAHAN DI SINI ---
   const contracts = [
     {
-      address: mintContractAddress,
-      abi: mintABI,
-      functionName: 'mint',
-      args: [address],
+      address: FAUCET_CONTRACT_ADDRESS, // <-- DIUBAH
+      abi: FAUCET_ABI,                  // <-- DIUBAH
+      functionName: 'claim',            // <-- DIUBAH
+      args: [address], // Argumen untuk fungsi 'claim' adalah alamat penerima
     },
   ] as unknown as ContractFunctionParameters[];
+  // --- SELESAI PERUBAHAN DI SINI ---
 
   const handleError = (err: TransactionError) => {
     console.error('Transaction error:', err);
