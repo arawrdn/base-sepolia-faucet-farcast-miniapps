@@ -1,5 +1,5 @@
 {
-  "name": "onchain-app-template",
+  "name": "Base Sepolia Faucet",
   "private": true,
   "version": "0.0.0",
   "scripts": {
