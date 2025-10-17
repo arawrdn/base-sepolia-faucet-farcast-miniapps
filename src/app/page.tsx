@@ -1,5 +1,4 @@
 'use client';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useEffect } from 'react';
 import { sdk } from '@farcaster/miniapp-sdk';
 
@@ -27,7 +26,13 @@ export default function Page() {
       
       <section className="mt-4 mb-6 flex w-full max-w-sm flex-row items-center justify-between">
         <h1 className="text-xl font-extrabold text-yellow-400">Base Sepolia Faucet</h1>
-        <ConnectButton label="Connect Wallet" />
+        
+        {isConnected ? (
+          <p className="text-sm font-medium text-lime-400">Wallet Connected</p>
+        ) : (
+          <p className="text-sm font-medium text-gray-400">Connecting...</p>
+        )}
+        
       </section>
       
       <section className="templateSection flex w-full max-w-sm flex-col items-center justify-center gap-6 rounded-xl bg-gray-800 shadow-2xl shadow-yellow-500/50 p-6 border border-yellow-500 min-h-[300px]">
@@ -51,28 +56,11 @@ export default function Page() {
             <p className="text-base text-gray-200 mb-2">
                 You can claim every 24 hours.
             </p>
-            <p className="text-sm text-yellow-500">
-                Please use the **Connect Wallet** button above.
+            
+            <p className="text-sm text-yellow-500 mt-4">
+                Waiting for Farcaster wallet connection...
             </p>
             
           </div>
         )}
-      </section>
-
-      <div className="mt-4 w-full max-w-sm text-center">
-        <p className="text-xs text-yellow-500">
-            Powered by <a
-                href="https://warpcast.com/aradeaward"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-            >
-                @aradeaward
-            </a>
-        </p>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
+      </section
