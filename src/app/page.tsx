@@ -27,7 +27,7 @@ export default function Page() {
       
       <section className="mt-4 mb-6 flex w-full max-w-sm flex-row items-center justify-between">
         <h1 className="text-xl font-extrabold text-yellow-400">Base Sepolia Faucet</h1>
-        <ConnectButton /> 
+        <ConnectButton label="Connect Wallet" /> 
       </section>
       
       <section className="templateSection flex w-full max-w-sm flex-col items-center justify-center gap-6 rounded-xl bg-gray-800 shadow-2xl shadow-yellow-500/50 p-6 border border-yellow-500 min-h-[300px]">
