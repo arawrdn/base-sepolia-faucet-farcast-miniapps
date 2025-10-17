@@ -10,6 +10,9 @@ import { http, createConfig } from 'wagmi';
 import { base, baseSepolia } from 'wagmi/chains';
 import { NEXT_PUBLIC_WC_PROJECT_ID } from './config';
 
+// LANGKAH 1: Import konektor khusus Farcaster
+import { farcasterFrame } from '@farcaster/frame-wagmi-connector'; 
+
 export function useWagmiConfig() {
   const projectId = NEXT_PUBLIC_WC_PROJECT_ID ?? '';
   if (!projectId) {
@@ -19,11 +22,25 @@ export function useWagmiConfig() {
   }
 
   return useMemo(() => {
+    // Definisi konektor Farcaster
+    const farcasterConnector = farcasterFrame();
+    
+    // LANGKAH 2: Tambahkan konektor Farcaster ke daftar dompet
     const connectors = connectorsForWallets(
       [
         {
           groupName: 'Recommended Wallet',
-          wallets: [coinbaseWallet],
+          wallets: [
+            // Tambahkan Farcaster Connector sebagai opsi utama di sini
+            ({ chains }) => ({
+                id: farcasterConnector.id,
+                name: farcasterConnector.name,
+                iconUrl: farcasterConnector.icon.light,
+                iconBackground: farcasterConnector.iconBackground,
+                createConnector: farcasterConnector.createConnector,
+            }),
+            coinbaseWallet, // Dompet yang sudah ada
+          ],
         },
         {
           groupName: 'Other Wallets',
