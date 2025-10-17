@@ -18,15 +18,28 @@ export const viewport = {
   initialScale: 1.0,
 };
 
+// --- CORRECTED METADATA BLOCK ---
 export const metadata: Metadata = {
-  title: 'Onchain App Template',
-  description: 'Built with OnchainKit',
+  title: 'Base Sepolia Faucet Mini App', 
+  description: 'Claim 0.05 Base Sepolia ETH inside Farcaster',
   openGraph: {
-    title: 'Onchain App Template',
-    description: 'Built with OnchainKit',
-    images: [`${NEXT_PUBLIC_URL}/vibes/vibes-19.png`],
+    title: 'Base Sepolia Faucet',
+    description: 'Claim 0.05 Base Sepolia ETH',
+    // Uses your uploaded image for Open Graph fallback
+    images: [`${NEXT_PUBLIC_URL}/embed.png`], 
+  },
+  other: {
+    // Farcaster Frame Tags (Mandatory for rendering the Frame)
+    'fc:frame': 'vNext', 
+    // References the image you uploaded to the /public directory
+    'fc:frame:image': `${NEXT_PUBLIC_URL}/embed.png`, 
+    // Initial button text
+    'fc:frame:button:1': 'Launch Faucet App',
+    // Post URL for the initial frame interaction (usually the app's root URL)
+    'fc:frame:post_url': NEXT_PUBLIC_URL,
   },
 };
+// --------------------------------
 
 export default function RootLayout({
   children,
