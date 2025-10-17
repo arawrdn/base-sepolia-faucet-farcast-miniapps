@@ -25,7 +25,7 @@
     "siwe": "^2.3.2",
     "wagmi": "^2.5.0",
     "@rainbow-me/rainbowkit": "^2.0.1",
-    "@farcaster/frame-wagmi-connector": "^1.0.0" 
+    "@farcaster/frame-wagmi-connector": "^1.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.0",
