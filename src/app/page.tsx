@@ -63,4 +63,23 @@ export default function Page() {
             
           </div>
         )}
-      </section
+      </section>
+      
+      {/* Tambahkan kembali elemen penutup yang hilang dari input Anda */}
+      <div className="mt-4 w-full max-w-sm text-center">
+        <p className="text-xs text-yellow-500">
+            Powered by <a
+                href="https://warpcast.com/aradeaward"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+            >
+                @aradeaward
+            </a>
+        </p>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
